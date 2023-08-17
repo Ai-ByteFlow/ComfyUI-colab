@@ -1,6 +1,6 @@
 {
   "last_node_id": 25,
-  "last_link_id": 46,
+  "last_link_id": 49,
   "nodes": [
     {
       "id": 15,
@@ -108,7 +108,7 @@
         "1": 46
       },
       "flags": {},
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -177,7 +177,7 @@
       "title": "Positive prompt",
       "properties": {},
       "widgets_values": [
-        "beautiful scenery nature inside a glass bottle landscape, purple galaxy bottle"
+        "a floating island, fantasy art, hyper realistic, 4k, highly detailed"
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -194,7 +194,7 @@
         "1": 262
       },
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -234,79 +234,13 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        822753295189824,
+        451427276910719,
         "randomize",
         20,
         6.5,
         "euler",
         "normal",
         1
-      ]
-    },
-    {
-      "id": 21,
-      "type": "KSamplerAdvanced",
-      "pos": [
-        -104,
-        190
-      ],
-      "size": {
-        "0": 315,
-        "1": 334
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 44,
-          "slot_index": 0
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 34,
-          "slot_index": 1
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 33
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 36,
-          "slot_index": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            37
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSamplerAdvanced"
-      },
-      "widgets_values": [
-        "enable",
-        377242762859438,
-        "randomize",
-        40,
-        6.5,
-        "dpmpp_3m_sde_gpu",
-        "karras",
-        20,
-        10000,
-        "disable"
       ]
     },
     {
@@ -345,220 +279,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 12,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -837,
-        247
-      ],
-      "size": {
-        "0": 315,
-        "1": 98
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            40
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            43
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            39
-          ],
-          "shape": 3
-        }
-      ],
-      "title": "SDXL Refiner Model",
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "sd_xl_refiner_1.0.safetensors"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 20,
-      "type": "CLIPTextEncodeSDXL",
-      "pos": [
-        -398,
-        204
-      ],
-      "size": {
-        "0": 400,
-        "1": 270
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 41,
-          "slot_index": 0
-        },
-        {
-          "name": "text_l",
-          "type": "STRING",
-          "link": 27,
-          "widget": {
-            "name": "text_l",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_L"
-              }
-            ]
-          },
-          "slot_index": 1
-        },
-        {
-          "name": "text_g",
-          "type": "STRING",
-          "link": 28,
-          "widget": {
-            "name": "text_g",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_G"
-              }
-            ]
-          },
-          "slot_index": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            34
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncodeSDXL"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        0,
-        0,
-        1024,
-        1024,
-        "beautiful scenery nature inside a glass bottle landscape, purple galaxy bottle",
-        "beautiful scenery nature inside a glass bottle landscape, purple galaxy bottle"
-      ]
-    },
-    {
-      "id": 19,
-      "type": "CLIPTextEncodeSDXL",
-      "pos": [
-        -396,
-        163
-      ],
-      "size": {
-        "0": 400,
-        "1": 270
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 42,
-          "slot_index": 0
-        },
-        {
-          "name": "text_l",
-          "type": "STRING",
-          "link": 25,
-          "widget": {
-            "name": "text_l",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_L"
-              }
-            ]
-          },
-          "slot_index": 1
-        },
-        {
-          "name": "text_g",
-          "type": "STRING",
-          "link": 26,
-          "widget": {
-            "name": "text_g",
-            "config": [
-              "STRING",
-              {
-                "multiline": true,
-                "default": "CLIP_G"
-              }
-            ]
-          },
-          "slot_index": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            33
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncodeSDXL"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        0,
-        0,
-        1024,
-        1024,
-        "text, watermark",
-        "text, watermark"
-      ]
-    },
-    {
       "id": 16,
       "type": "CLIPTextEncodeSDXL",
       "pos": [
@@ -572,7 +292,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -635,8 +355,8 @@
         0,
         1024,
         1024,
-        "beautiful scenery nature inside a glass bottle landscape, purple galaxy bottle",
-        "beautiful scenery nature inside a glass bottle landscape, purple galaxy bottle"
+        "a floating island, fantasy art, hyper realistic, 4k, highly detailed",
+        "a floating island, fantasy art, hyper realistic, 4k, highly detailed"
       ]
     },
     {
@@ -653,7 +373,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -719,16 +439,325 @@
       ]
     },
     {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        228,
+        580
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            46
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 25,
+      "type": "SaveImage",
+      "pos": [
+        467,
+        200
+      ],
+      "size": {
+        "0": 582.779541015625,
+        "1": 626.574951171875
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "title": "SDXL Base+LoRA Image",
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "SaveImage",
+      "pos": [
+        1064,
+        199
+      ],
+      "size": {
+        "0": 576.595703125,
+        "1": 627.2147827148438
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 38
+        }
+      ],
+      "title": "SDXL Refiner+LoRA Image",
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -837,
+        247
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            47
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            48,
+            49
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            39
+          ],
+          "shape": 3
+        }
+      ],
+      "title": "SDXL Refiner Model",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_refiner_1.0.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 20,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": [
+        -407,
+        337
+      ],
+      "size": {
+        "0": 400,
+        "1": 270
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 48,
+          "slot_index": 0
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 27,
+          "widget": {
+            "name": "text_l",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_L"
+              }
+            ]
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text_g",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_G"
+              }
+            ]
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            34
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "a floating island, fantasy art, hyper realistic, 4k, highly detailed",
+        "a floating island, fantasy art, hyper realistic, 4k, highly detailed"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncodeSDXL",
+      "pos": [
+        -409,
+        294
+      ],
+      "size": {
+        "0": 400,
+        "1": 270
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 49,
+          "slot_index": 0
+        },
+        {
+          "name": "text_l",
+          "type": "STRING",
+          "link": 25,
+          "widget": {
+            "name": "text_l",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_L"
+              }
+            ]
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "text_g",
+          "type": "STRING",
+          "link": 26,
+          "widget": {
+            "name": "text_g",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "CLIP_G"
+              }
+            ]
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeSDXL"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        0,
+        0,
+        1024,
+        1024,
+        "text, watermark",
+        "text, watermark"
+      ]
+    },
+    {
       "id": 10,
       "type": "LoraLoader",
       "pos": [
         -484,
-        407
+        380
       ],
-      "size": [
-        358.08015332031266,
-        126
-      ],
+      "size": {
+        "0": 358.08013916015625,
+        "1": 126
+      },
       "flags": {},
       "order": 5,
       "mode": 0,
@@ -778,156 +807,69 @@
       "bgcolor": "#535"
     },
     {
-      "id": 24,
-      "type": "LoraLoader",
+      "id": 21,
+      "type": "KSamplerAdvanced",
       "pos": [
-        -479,
-        243
-      ],
-      "size": [
-        349.0871533203126,
-        126
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 40
-        },
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 43
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            44
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            41,
-            42
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "title": "SDXL LoRA",
-      "properties": {
-        "Node name for S&R": "LoraLoader"
-      },
-      "widgets_values": [
-        "sdxl_lora.safetensors",
-        1,
-        1
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 8,
-      "type": "VAEDecode",
-      "pos": [
-        228,
-        580
+        -104,
+        190
       ],
       "size": {
-        "0": 210,
-        "1": 46
+        "0": 315,
+        "1": 334
       },
       "flags": {},
       "order": 12,
       "mode": 0,
       "inputs": [
         {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 7
+          "name": "model",
+          "type": "MODEL",
+          "link": 47,
+          "slot_index": 0
         },
         {
-          "name": "vae",
-          "type": "VAE",
-          "link": 8
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 34,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 33
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 36,
+          "slot_index": 3
         }
       ],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "LATENT",
+          "type": "LATENT",
           "links": [
-            46
+            37
           ],
+          "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "VAEDecode"
-      }
-    },
-    {
-      "id": 25,
-      "type": "SaveImage",
-      "pos": [
-        467,
-        200
-      ],
-      "size": [
-        582.7795263476564,
-        626.5749540460207
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 46
-        }
-      ],
-      "title": "SDXL Base+LoRA Image",
-      "properties": {},
-      "widgets_values": [
-        "ComfyUI"
-      ]
-    },
-    {
-      "id": 23,
-      "type": "SaveImage",
-      "pos": [
-        1064,
-        199
-      ],
-      "size": {
-        "0": 576.595703125,
-        "1": 627.2147827148438
+        "Node name for S&R": "KSamplerAdvanced"
       },
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 38
-        }
-      ],
-      "title": "SDXL Refiner+LoRA Image",
-      "properties": {},
       "widgets_values": [
-        "ComfyUI"
+        "enable",
+        52872430036744,
+        "randomize",
+        30,
+        6.5,
+        "euler",
+        "normal",
+        20,
+        10000,
+        "disable"
       ]
     }
   ],
@@ -1117,46 +1059,6 @@
       "VAE"
     ],
     [
-      40,
-      12,
-      0,
-      24,
-      0,
-      "MODEL"
-    ],
-    [
-      41,
-      24,
-      1,
-      20,
-      0,
-      "CLIP"
-    ],
-    [
-      42,
-      24,
-      1,
-      19,
-      0,
-      "CLIP"
-    ],
-    [
-      43,
-      12,
-      1,
-      24,
-      1,
-      "CLIP"
-    ],
-    [
-      44,
-      24,
-      0,
-      21,
-      0,
-      "MODEL"
-    ],
-    [
       45,
       4,
       0,
@@ -1171,6 +1073,30 @@
       25,
       0,
       "IMAGE"
+    ],
+    [
+      47,
+      12,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      48,
+      12,
+      1,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      49,
+      12,
+      1,
+      19,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [],
